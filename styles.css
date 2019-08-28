@@ -1,0 +1,279 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans Pro", Verdana, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(#5c627d 50%, #2e3255);
+}
+
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+
+.app {
+  position: relative;
+  margin: 0 auto;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  font-size: 18px;
+}
+
+.btn {
+  font-size: inherit;
+  background: none;
+  cursor: pointer;
+  border-radius: 70px;
+  width: 70px;
+  height: 70px;
+  text-transform: uppercase;
+  background: transparent;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  outline: none;
+  border: none;
+  font-weight: bold;
+  color: transparent;
+  font-size: inherit;
+  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 20px 31px 3px rgba(0, 0, 0, 0.14), 0px 8px 38px 7px rgba(0, 0, 0, 0.12);
+}
+.btn.display {
+  font-weight: bold;
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: none;
+  text-align: center;
+  line-height: 70px;
+  font-size: inherit;
+  color: white;
+}
+
+.btn-clicked {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.5;
+  -webkit-animation: btn-clicked 500ms forwards;
+          animation: btn-clicked 500ms forwards;
+}
+
+@-webkit-keyframes btn-clicked {
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@keyframes btn-clicked {
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+.text {
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: inherit;
+  font-size: inherit;
+  text-transform: uppercase;
+  outline: 1px solid pink;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.ring {
+  width: 70px;
+  height: 70px;
+  position: relative;
+  color: white;
+}
+
+.ring-background-2 {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  top: -23.3333333333px;
+  left: 0;
+  -webkit-transform: translate(calc(-50% + 35px), calc(-50% + 35px)) scale(0.7);
+          transform: translate(calc(-50% + 35px), calc(-50% + 35px)) scale(0.7);
+  z-index: -1;
+}
+.ring-background-2 .bg-line {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 70px);
+  background: linear-gradient(315deg, #181e45 50%, #343a5d);
+  background: #181e45;
+  width: 140px;
+  height: 434px;
+  border-radius: 140px;
+}
+.ring-background-2 .bg-line--1 {
+  -webkit-transform-origin: 50% 70px;
+          transform-origin: 50% 70px;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+.ring-background-2 .bg-line--1::before {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 50%;
+  top: 25%;
+  left: -1px;
+  position: absolute;
+  box-shadow: 0 0 10px #333;
+  z-index: -1;
+}
+.ring-background-2 .bg-line--2 {
+  -webkit-transform-origin: 50% 70px;
+          transform-origin: 50% 70px;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+.ring-background-2 .bg-line--3 {
+  box-shadow: 0 0 30px #333;
+  -webkit-transform-origin: 50% 70px;
+          transform-origin: 50% 70px;
+  height: 140px;
+  width: 420px;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateY(-25px);
+          transform: translateY(-25px);
+}
+.ring-background-2 svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.ring-background-2 svg polygon {
+  background: linear-gradient(315deg, #181e45 50%, #343a5d);
+  fill: #181e45;
+}
+
+.reference {
+  position: fixed;
+  bottom: 4px;
+  right: 4px;
+  font-size: 14px;
+  color: #ddd;
+}
+
+.line-wrap {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 70px;
+}
+
+.line {
+  pointer-events: none;
+  border-radius: 70px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 100%;
+  opacity: 1;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  transition: 500ms;
+}
+
+.topic-result {
+  cursor: pointer;
+  border: 0;
+  transition: 500ms;
+  -webkit-transform: scale(0) translateZ(0);
+          transform: scale(0) translateZ(0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  font-size: 40px;
+  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 20px 31px 3px rgba(0, 0, 0, 0.14), 0px 8px 38px 7px rgba(0, 0, 0, 0.12);
+}
+.topic-result.is-active {
+  -webkit-transform: scale(1.1) translateZ(0);
+          transform: scale(1.1) translateZ(0);
+  transition-timing-function: cubic-bezier(0.07, 1.12, 0.74, 1.06);
+}
+
+.topic {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.topic.is-active .line {
+  width: 250%;
+  transition-timing-function: cubic-bezier(0.07, 1.12, 0.74, 1.06);
+}
+.topic[data-topic="good"] {
+  -webkit-transform: translateY(-105px) translateX(0px);
+          transform: translateY(-105px) translateX(0px);
+}
+.topic[data-topic="good"] .line-wrap {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.topic[data-topic="good"] .line {
+  background: dodgerblue;
+}
+.topic[data-topic="fast"] {
+  -webkit-transform: translateY(52.4999999626px) translateX(-90.9326671629px);
+          transform: translateY(52.4999999626px) translateX(-90.9326671629px);
+}
+.topic[data-topic="fast"] .line-wrap {
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+.topic[data-topic="fast"] .line {
+  background: crimson;
+}
+.topic[data-topic="cheap"] {
+  -webkit-transform: translateY(52.5px) translateX(90.9326673974px);
+          transform: translateY(52.5px) translateX(90.9326673974px);
+}
+.topic[data-topic="cheap"] .line-wrap {
+  -webkit-transform: rotate(210deg);
+          transform: rotate(210deg);
+}
+.topic[data-topic="cheap"] .line {
+  background: mediumseagreen;
+}
